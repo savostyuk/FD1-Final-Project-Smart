@@ -40,6 +40,14 @@
     letter-spacing: 1px;
     color: #FFFFFF;
 }
+.blog_page [class^="flaticon-"]:before, .blog_page [class*=" flaticon-"]:before,
+.blog_page [class^="flaticon-"]:after, .blog_page [class*=" flaticon-"]:after {
+    font-family: Flaticon;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
 
 .flaticon-teacher:before { content: "\f100"; }
 .flaticon-student:before { content: "\f101"; }
@@ -49,5 +57,5 @@
 .flaticon-teaching:before { content: "\f105"; }
 .flaticon-jigsaw:before { content: "\f106"; }
 .flaticon-playing:before { content: "\f107"; }
-.flaticon-left-quote:before { content: "\f108"; }
-.flaticon-next:before { content: "\f109"; }
+.flaticon-next:before { content: "\f108"; }
+.flaticon-left-arrow:before { content: "\f109"; }

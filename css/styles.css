@@ -4,11 +4,9 @@ body {
     margin: 0;
     line-height: 1.8;
 }
-
 a{
     text-decoration: none;
 }
-
 h1{
     font-size: 60px;
     color: #ffffff;
@@ -31,24 +29,20 @@ h4{
     font-size: 24px;
     font-weight: 500;
 }
-
 h5{
     color: rgba(255, 255, 255, 0.8);
     font-size: 16px;
     font-weight: normal;
 }
-
 h6{
     color: rgba(0, 0, 0, 0.8);
     font-size: 16px;
     font-weight: normal;
     margin: 16px 0;
 }
-
-p{
+p, .text_translucent{
     color: rgba(0, 0, 0, 0.5);
 }
-
 .bg_white {
     background-color: #ffffff;
 }
@@ -64,19 +58,15 @@ p{
 .bg_green {
     background: #8cc152;
 }
-
 .bg_red{
     background: #f1453d;
 }
-
 .bg_ltgrey {
     background: #fafafa;
 }
-
 .text_white {
     color:#ffffff;
 }
-
 .text_black {
     color:#000000;
 }
@@ -86,22 +76,16 @@ p{
 .text_orange {
     color:#fda638;
 }
-
 .text_lightblue {
     color:#1eaaf1;
 }
-
-.text_translucent{
-    color: rgba(0, 0, 0, 0.8);
- }
-
-.nav_wrapper, .offer, .teachers, .courses, .pricing, .blog, .feedback_wrapper, .footer_wrapper,
+.nav_wrapper, .offer, .scroll_info, .teachers, .courses, .pricing, .blog, .feedback_wrapper, .footer_wrapper,
 .contact {
     max-width: 1230px;
     margin-right: auto;
     margin-left: auto;
-}
 
+}
 .button{
     display: inline-block;
     font-weight: 400;
@@ -111,7 +95,6 @@ p{
     border-radius: 40px;
     padding: 5px 10px;
 }
-
 header {
     height: 50px;
     width: 100%;
@@ -137,16 +120,13 @@ header {
     text-align: center;
     color: #ffffff;
 }
-
 nav{
-    height: 100px;
+
     background-color: #FFFFFF;
     width: 100%;
-    position: sticky;
     z-index: 1000;
     box-shadow:  0 5px 7px lightgray;
 }
-
 .nav_wrapper{
     display:flex;
     flex-direction: row;
@@ -154,7 +134,17 @@ nav{
     justify-content: space-between;
     height: 100px;
 }
-
+/* Классы для корректной работы фиксированного меню */
+.nav_sticky {
+    position: fixed;
+    height: 60px;
+}
+.nav_wrap_sticky {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* -------------------- */
 .heading {
     margin-left: 10px;
 }
@@ -162,7 +152,6 @@ nav{
     text-align: right;
     margin-right: 10px;
 }
-
 .heading a{
     color: #000000;
     font-weight: 900;
@@ -179,12 +168,48 @@ nav{
 .menu a{
     color: #000000;
 }
+
 .href_main{
     color: #1eaaf1 !important;
 }
 
 .menu a:hover {
     color: #1eaaf1;
+}
+.nav_dark, .menu_dark{
+    display: none;
+    background-color: black;
+}
+
+.nav_dark .heading a{
+    color: #FFFFFF;
+}
+
+.icon_dark button{
+    margin-right: 1em;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    background-color: black;
+    font-size: 16px;
+}
+
+.menu_dark ul{
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.menu_dark ul li{
+    padding: 0.8em;
+}
+
+.menu_dark ul li a{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu_dark ul li a:hover, .dark_active{
+    color: #FFFFFF !important;
 }
 
 .banner{
@@ -193,8 +218,9 @@ nav{
     background-size: cover;
     text-align: center;
     position: relative;
+    margin-bottom: 7em;
 }
-
+/* Полупрозрачный красный слой фона  */
 .banner_wrapper{
     height: 300px;
     width: 100%;
@@ -204,6 +230,7 @@ nav{
     top:0;
     left:0;
 }
+
 .banner_information{
     position: absolute;
     width: 50%;
@@ -215,32 +242,40 @@ nav{
     right: 0;
     z-index: 5;
 }
+
 .banner_information h1{
     margin: 0;
 }
+
 .breadcrumbs{
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
     color: #FFFFFF;
-
 }
+
 .breadcrumbs a{
     color: #FFFFFF;
 }
+
 .banner_border{
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-
-.slider {
+/* Стили баннера для главной страницы сайта */
+.caption {
     height: 600px;
     background-size: cover;
     text-align: center;
     position: relative;
-    animation: MyAnimation2 20s  infinite;
-
 }
-.slider_info{
+
+#caption_first{
+    background: url(../images/bg_1.jpg) center center no-repeat;
+}
+#caption_second{
+    background: url(../images/bg_2.jpg) center center no-repeat;
+}
+.caption_info{
     position: absolute;
     left: 0;
     right: 0;
@@ -249,6 +284,7 @@ nav{
     margin: auto;
     z-index: 5;
 }
+/* Полупрозрачный черный слой фона для главной страницы */
 .bg_opacity{
     position: absolute;
     left: 0;
@@ -258,13 +294,15 @@ nav{
     background-color: #000000;
     opacity: .3;
 }
-
+/* Стили для секции Сервис главной страницы*/
 .services {
-    height: 285px;
     display:flex;
     flex-direction: row;
     align-content: stretch;
     align-items: stretch;
+    max-width: 100%;
+    margin-top: -9px;
+
 }
 
 .icon_services {
@@ -277,10 +315,11 @@ nav{
     left:50%;
     margin-left:-60px;
     top: -60px;
+    z-index: 5;
 }
 
 .services_box  {
-    flex-grow:1;
+    flex: 0 0 25%;
     position: relative;
 }
 
@@ -295,9 +334,8 @@ nav{
 .services p{
     color: rgba(255, 255, 255, 0.8);
 }
-
+/* Стили для секции Предложения главной страницы*/
 .offer {
-    height: 918px;
     display:flex;
     flex-direction: row-reverse;
     align-content: stretch;
@@ -345,13 +383,12 @@ nav{
     margin-top: 0;
     margin-bottom: 1rem;
 }
-
+/* Стили для секции с фиксированным фоном*/
 .scroll{
     height: 374px;
     background: url(../images/bg_3.jpg) 50% no-repeat fixed;
     background-size: cover;
     position: relative;
-
 }
 .scroll_wrapper{
     height: 374px;
@@ -367,13 +404,14 @@ nav{
     align-items: center;
     align-content: center;
     justify-content: center;
-    position: absolute;
-    top: 100px;
     z-index: 5;
-    margin-right: 70px;
-    margin-left: 70px;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
-
+/* Стили для дополнительного текста главной страницы к каждой секции*/
 .main_text {
     width: 80%;
     padding-top: 70px;
@@ -381,9 +419,8 @@ nav{
     margin-right:auto;
     text-align: center;
     margin-bottom: 3em;
-
 }
-
+/* Стили для секции Преподаватели*/
 .teachers_wrapper{
     display: flex;
     flex-direction: row;
@@ -393,9 +430,9 @@ nav{
 }
 
 .teachers_box{
-    flex-grow: 1;
-    margin-right: 15px;
-    margin-left: 15px;
+    flex: 0 0 23%;
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 .teachers_photo{
@@ -403,6 +440,11 @@ nav{
     overflow: hidden;
     margin-bottom: 10px;
     position: relative;
+}
+.teachers_photo img{
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
 }
 
 .social_networks {
@@ -431,18 +473,21 @@ nav{
 .teachers_box:hover .social_networks{
     opacity: 100%;
 }
+
 .teachers_box:hover h4{
     color: #1eaaf1;
 }
-
+/* Стили для секции Программы*/
 .courses_wrapper{
     display: flex;
     flex-wrap: wrap;
     margin: 2em 0;
 }
+
 .courses_item {
     padding: 20px;
 }
+
 .courses_item a{
     font-size: 24px;
 }
@@ -458,31 +503,37 @@ nav{
     flex: 0 0 250px;
     margin-left: 15px;
 }
+
 #course_first{
+    background: url(../images/course-2.jpg) 80% no-repeat;
+    background-size: cover;
+}
+
+#course_second{
     background: url(../images/course-1.jpg) center no-repeat;
     background-size: cover;
 }
-#course_second{
-    background: url(../images/course-2.jpg) center no-repeat;
-    background-size: cover;
-}
+
 #course_third{
     background: url(../images/course-3.jpg) center no-repeat;
     background-size: cover;
 }
+
 #course_forth{
     background: url(../images/course-4.jpg) center no-repeat;
     background-size: cover;
 }
+
 #course_fifth{
-    background: url(../images/course-5.jpg) center no-repeat;
+    background: url(../images/course-5.jpg) 20% no-repeat;
     background-size: cover;
 }
+
 #course_sixth{
     background: url(../images/course-6.jpg) center no-repeat;
     background-size: cover;
 }
-
+/* Стили для секции с фиксированным фоном и анимацией цифр*/
 .experience {
     height: 600px;
     background: url(../images/bg_4.jpg) no-repeat fixed;
@@ -495,8 +546,8 @@ nav{
     width: 60%;
     margin-left:auto;
     margin-right:auto;
-
 }
+
 .experience_wrapper{
     display: flex;
     flex-direction: row;
@@ -506,72 +557,66 @@ nav{
 .experience_box{
      margin-right: 3em;
 }
+
 .experience_number{
     color: #1eaaf1;
     opacity: 0;
 }
-
+/* Стили для секции с отзывами*/
 .reviews{
     padding-bottom: 112px;
 }
 
-.reviews_wrapper{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 3em;
+.reviews_item{
+    padding-left: 25%;
+    padding-top: 2em;
+}
+/* Изменение курсора при перетаскивании блоков слайдера*/
+.reviews_item:active, .caption:active{
+    cursor: grab;
 }
 
 .reviews_photo{
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    float: left;
+}
+#person_first{
     background: url(../images/person_1.jpg) no-repeat;
     background-size: cover;
 }
+#person_second{
+    background: url(../images/person_2.jpg) no-repeat;
+    background-size: cover;
+}
+#person_third{
+    background: url(../images/person_3.jpg) no-repeat;
+    background-size: cover;
+}
+#person_forth{
+    background: url(../images/person_4.jpg) no-repeat;
+    background-size: cover;
+}
+#person_fifth{
+    background: url(../images/person_5.jpg) no-repeat;
+    background-size: cover;
+}
+
 
 .reviews_text{
     width: 40%;
-    margin-top: -1em;
-    margin-left: 1em;
+    background: url(../images/quote.svg) 0 0 no-repeat;
+    margin-top: -2em;
+    margin-left: 140px;
+    position: relative;
+    z-index: 5;
+    padding-top: 1em;
 }
-
-.reviews_button{
-    text-align: center;
-}
-
-.reviews_button button{
-    width: 10px;
-    height: 10px;
-    margin: 5px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.2);
-    border: none;
-}
-
-button:active{
-    background: #1eaaf1;
-}
-
-button,
-button:active,
-button:focus,
-.form-control:active,
-.form-control:hover,
-.form-control:focus,
-.button_feedback:active,
-.button_feedback:focus,
-textarea:active,
-textarea:focus {
-    outline: none;
-    outline-offset: 0;
-}
-
-button:hover, .button_feedback:hover {
-    cursor: pointer;
-}
+/* Стили для секции с формой Обратной связи*/
 .feedback{
-    background: url(../images/bg_5.jpg) 10% 0 no-repeat fixed;
+    background: url(../images/bg_5.jpg) no-repeat fixed;
+    background-size: cover;
 }
 
 .feedback_wrapper {
@@ -629,6 +674,23 @@ button:hover, .button_feedback:hover {
     padding: 5px 10px;
     font-size: 16px;
 }
+button,
+button:active,
+button:focus,
+.form-control:active,
+.form-control:hover,
+.form-control:focus,
+.button_feedback:active,
+.button_feedback:focus,
+textarea:active,
+textarea:focus {
+    outline: none;
+    outline-offset: 0;
+}
+
+button:hover, .button_feedback:hover {
+    cursor: pointer;
+}
 
 .feedback_box input::placeholder, .feedback_box textarea::placeholder {
     font-family: 'Tenor Sans',Arial, sans-serif;
@@ -636,7 +698,7 @@ button:hover, .button_feedback:hover {
     vertical-align: top;
     font-size: 16px;
 }
-
+/* Стили для секции Стоимость обучения*/
 .pricing_wrapper{
     display: flex;
     flex-direction: row;
@@ -644,64 +706,80 @@ button:hover, .button_feedback:hover {
     text-align: center;
     margin-bottom: 5em;
 }
-
 .pricing_wrapper a{
     transition: 0.5s;
 }
-.pricing_wrapper #pricing_first:hover{
+.pricing_box img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+.pricing_wrapper #button_first:hover{
     background-color: #FFFFFF;
     border: #1eaaf1 1px solid;
     color: #1eaaf1;
 }
-.pricing_wrapper #pricing_second:hover{
+
+.pricing_wrapper #button_second:hover{
     background-color: #FFFFFF;
     border: #fda638 1px solid;
     color: #fda638;
 }
-.pricing_wrapper #pricing_third:hover{
+
+.pricing_wrapper #button_third:hover{
     background-color: #FFFFFF;
     border: #8cc152 1px solid;
     color: #8cc152;
 }
-.pricing_wrapper #pricing_forth:hover{
+
+.pricing_wrapper #button_forth:hover{
     background-color: #FFFFFF;
     border: #f1453d 1px solid;
     color: #f1453d;
 }
 
 .pricing_box{
-    flex-grow: 1;
-    margin-right: 15px;
-    margin-left: 15px;
+    flex: 0 0 23%;
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 .pricing a{
     margin-bottom: 1em;
 }
-
+/* Стили для секции Блог*/
 .blog_wrapper{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 7em;
+    align-items: stretch;
+    flex-wrap: wrap;
 }
 
 .blog_box{
-    flex-grow: 1;
+    flex: 0 0 30%;
     background-color: #FFFFFF;
-    margin-right: 15px;
-    margin-left: 15px;
-
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    margin-bottom: 7em;
 }
+
 .blog_box_image{
     position: relative;
 }
+.blog_box_image img{
+    object-fit: cover;
+    height: 275px;
+    width: 100%;
+}
+
 .date_blog{
     position: absolute;
     left: 0;
     bottom: 10px;
     padding: 5px 15px;
 }
+
 .day{
     font-weight: 700;
     font-size: 20px;
@@ -709,39 +787,59 @@ button:hover, .button_feedback:hover {
     margin: 0;
     text-align: center;
 }
+
 .month, .year{
     font-size: 13px;
     color: #FFFFFF;
     margin: 0;
     text-align: center;
 }
+
 .blog_box_text{
-    position: relative;
-    padding: 10px;
+    padding: 24px;
 }
-.blog_box_text a {
+
+.blog_heading {
     font-size: 20px;
     color: #000000;
     transition: 0.5s;
 }
 
-.blog_box_text a:hover {
+.blog_heading:hover {
     color: #1eaaf1;
 }
-.blog_box_link a{
-    color: #FFFFFF;
-    font-size: 16px;
+
+.blog_box_link{
     position: relative;
 }
-.blog_box_link_info{
-    position: absolute;
-    right: 0;
 
+.blog_box_info{
+   position: absolute;
+   bottom: 0;
+   right: 0;
 }
-.blog_box_link_info a{
+.blog_page{
+    text-align: center;
+    padding-bottom: 7em;
     color: #1eaaf1;
 }
-
+.blog_page a{
+    border: 1px solid #1eaaf1;
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+    color: #1eaaf1;
+}
+#page_first, .blog_page a:hover{
+    border: 1px solid transparent;
+    background-color: #1eaaf1;
+    color: #ffffff;
+}
+/* Стили для секции Галерея фото*/
 .gallery {
     display: flex;
     flex-direction: row;
@@ -749,17 +847,15 @@ button:hover, .button_feedback:hover {
     align-content: stretch;
     align-items: stretch;
 }
-
 .gallery_photo{
     position: relative;
     height: 350px;
     width: 100%;
 }
-
-.gallery_link{
-    position: absolute;
-    top:0;
-    left: 0;
+.gallery_photo img{
+    object-fit: cover;
+    height: 350px;
+    width: 100%;
 }
 
 .gallery_button{
@@ -775,48 +871,77 @@ button:hover, .button_feedback:hover {
     text-align: center;
     transition: 0.3s;
 }
+
 .gallery a:hover{
     cursor: zoom-in;
 }
+
 .gallery a:hover .gallery_button{
     opacity: 100%;
 }
+/* Стили для секции Подвал*/
 footer{
-    padding: 6em 0;
+    padding: 3em 0;
     background-color: #232323;
     color: white;
 }
+
 .footer_wrapper{
     display: flex;
     flex-direction: row;
-    align-content: stretch;
-    align-items: stretch;
+    justify-content: center;
 }
+
 .footer_box{
-    flex: 0 0 23%;
-    max-width: 23%;
+    flex: 0 0 22%;
     margin-right: 1%;
     margin-left: 1%;
 }
+
 .footer_box h3:first-of-type, form{
     margin-bottom: 40px;
 }
+
 footer a{
     color: #FFFFFF;
     font-size: 10px;
     display: block;
 }
-.event a{
+
+.event {
+    margin-bottom: 2em;
+}
+
+.event img{
     height: 80px;
     width: 80px;
     margin-right: 24px;
     float: left;
+    object-fit: cover;
 }
+
+.event a{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    transition-duration: 1s;
+}
+
+.event a:hover{
+    color: #1eaaf1;
+}
+
+.event_item{
+    color: gray;
+    font-size: 12px;
+}
+
 .href_item, .footer_box p {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
 }
-.href_item:hover {
+
+.href_item:hover, .about a:hover {
     color: #FFFFFF;
 }
 
@@ -832,6 +957,7 @@ footer a{
     margin-bottom: 0.5em;
     padding-right: 0;
 }
+
 .footer_box input[type="submit"]{
     border-radius: 2px;
     width: 100%;
@@ -843,10 +969,12 @@ footer a{
     height: 50px;
     transition: 0.3s;
 }
+
 .footer_box input[type="submit"]:hover{
     cursor: pointer;
     background-color: #1eaaf1;
 }
+
 .footer_box:last-child{
     text-align: center;
 }
@@ -854,7 +982,6 @@ footer a{
 .social {
     display: flex;
     justify-content: center;
-
 }
 
 .social a {
@@ -871,23 +998,21 @@ footer a{
     line-height: 40px;
     color: white;
 }
-.about{
+
+.about,.about a {
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
     font-size: 14px;
     margin-bottom: 0;
-    margin-top: 6em;
-
-}
-.slideUp{
-    animation-name: slideUp;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    visibility: visible !important;
+    margin-top: 3em;
 }
 
-.wrapper_contact{
-    padding: 7em 0;
+.about a{
+    display: inline;
+}
+/* Стили для страницы Контакты центра*/
+.contact_wrapper{
+    padding-bottom: 7em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -898,7 +1023,6 @@ footer a{
 
 .contact_item{
     flex: 0 0 23%;
-    max-width: 23%;
     margin-right: 1%;
     margin-left: 1%;
 }
@@ -907,9 +1031,10 @@ footer a{
     display: flex;
     flex-direction: row;
 }
+
 .contact_form_item{
     padding: 2em;
-    }
+}
 
 .contact_form_item input[type="text"], textarea{
     background: #fff;
@@ -919,8 +1044,16 @@ footer a{
     margin-bottom: 1em;
     width: 100%;
 }
+
 .contact_form_item input[type="submit"]{
 width: 40%;
+}
+/*Анимация всплывающих заголовков страницы*/
+.slideUp{
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    visibility: visible !important;
 }
 
 @keyframes slideUp {
@@ -934,10 +1067,153 @@ width: 40%;
         opacity: 100%;
     }
 }
+/* Стили для адаптивности сайта*/
+@media only screen and (max-width:1000px){
+    .nav_wrapper {
+        display: none;
+    }
 
-@keyframes MyAnimation2
-{
-    0%,40% {     background: url(../images/bg_1.jpg) center center no-repeat;  }
-    40%,80% {     background: url(../images/bg_2.jpg) center center no-repeat; }
-    80%,100%       {     background: url(../images/bg_1.jpg) center center no-repeat;  }
+    .nav_dark {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .offer_wrapper{
+        flex-direction: column;
+    }
+    .scroll_info{
+        line-height: 1.4;
+        top: 50px !important;
+    }
+    .services_information h3{
+        font-size: 24px;
+    }
+    .teachers_wrapper, .pricing_wrapper, .courses_wrapper, .footer_wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .teachers_box, .pricing_box, .blog_box, .footer_box {
+        flex: 0 0 47% !important;
+        margin-bottom: 2em;
+    }
+    .courses_box{
+        flex-direction: column !important;
+        flex: 0 0 47% !important;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .pricing_box img{
+        height: 250px;
+    }
+    .courses_photo{
+        flex-grow: 1 !important;
+        margin-left: 0 !important;
+    }
+    .feedback {
+        background: url(../images/bg_5.jpg) 30% 0 no-repeat fixed !important;
+    }
+    .contact_form iframe{
+        width: 450px;
+    }
+}
+@media only screen and (max-width: 800px){
+    h1{
+        font-size: 44px;
+    }
+    header{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .header_information{
+        width: 100%;
+        justify-content: center;
+    }
+    .services_box{
+        padding-bottom: 60px;
+    }
+    .services, .offer, .scroll_info, .teachers_wrapper, .courses_wrapper, .experience_wrapper, .contact_wrapper, .contact_form {
+        flex-direction: column !important;
+    }
+    .contact_form iframe{
+        display: none;
+    }
+   .scroll, .scroll_wrapper{
+    height: 500px;
+}
+    .scroll_info h2{
+        font-size: 34px;
+    }
+    .experience{
+        height: 800px;
+        padding-top: 50px !important;
+        margin: 0;
+    }
+    .main_text{
+    width: 100%;
+    }
+    .offer_welcome, .offer_info {
+        padding: 0;
+    }
+    .experience_information{
+        width: 80% !important;
+    }
+    .experience_information h1, .experience_box, .experience_box h6 {
+        margin: 0;
+    }
+    .reviews_item{
+        padding-left: 15%;
+    }
+    .feedback {
+        background: none;
+    }
+    .feedback_photo{
+        display: none;
+    }
+    .feedback_form{
+        width: 100%;
+        padding: 0 1em 1em 1em;
+    }
+    .feedback_box, .pricing_wrapper, .blog_wrapper, .gallery, .footer_wrapper {
+        flex-direction: column;
+    }
+    .pricing_box img{
+        height: 350px;
+    }
+    .teachers_photo img{
+        height: 500px;
+    }
+    .contact_item{
+        max-width: 100%;
+    }
+
+}
+
+@media only screen and (max-width: 500px){
+    .scroll, .experience{
+        display: none;
+    }
+    .contact_form_item input[type="submit"]{
+        width: 100%;
+    }
+    .social_networks{
+        opacity: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    h1{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 20px;
+    }
+ .offer_icon, .reviews, .blog_box_info{
+        display: none;
+    }
+    .offer_item{
+        margin-left: 10px;
+    }
 }

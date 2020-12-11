@@ -45,6 +45,8 @@
             'date': '&#xe953;',
             'user': '&#xe971;',
             'profile2': '&#xe971;',
+            'menu': '&#xe9bd;',
+            'list3': '&#xe9bd;',
             'arrow-right2': '&#xea3c;',
             'right4': '&#xea3c;',
             'mail5': '&#xea86;',
